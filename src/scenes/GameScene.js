@@ -17,6 +17,9 @@ class GameScene extends Phaser.Scene {
     this.menu.setOrigin(0);
     this.menu.play('wiggle');
 
+    this.openMenuSfx = this.sound.add('menuOpen');
+    this.closeMenuSfx = this.sound.add('menuClose');
+
     this.shrimpBucksText = this.add.text(100, 100, 'SHRIMPBUCKS: ' + this.shrimpBucks, {
       fontFamily: "debussy",
     });
@@ -49,6 +52,11 @@ class GameScene extends Phaser.Scene {
 
   toggleMenu(){
     this.showingMenu = !this.showingMenu;
+    if(this.showingMenu) {
+      this.openMenuSfx.play();
+    } else {
+      this.closeMenuSfx.play();
+    }
     console.log('show menu');
     console.log(this.showingMenu);
   }
