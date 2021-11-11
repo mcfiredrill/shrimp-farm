@@ -59,14 +59,14 @@ class BootScene extends Phaser.Scene {
         });
 
     //this.load.image("logo", logoImg);
-    this.load.audio("bgm", "src/assets/shrimp_farmer.mp3");
-    this.load.audio("menuOpen", "src/assets/shrimp_sfx_open_menu.mp3");
-    this.load.audio("menuClose", "src/assets/shrimp_sfx_close_menu.mp3");
-    this.loadFont("src/assets/debussy.ttf");
-    this.load.image('shrimp', 'src/assets/shrimp.png');
-    this.load.image('background', 'src/assets/bg.png');
+    this.load.audio("bgm", "assets/shrimp_farmer.mp3");
+    this.load.audio("menuOpen", "assets/shrimp_sfx_open_menu.mp3");
+    this.load.audio("menuClose", "assets/shrimp_sfx_close_menu.mp3");
+    this.loadFont("assets/debussy.ttf");
+    this.load.image('shrimp', 'assets/shrimp.png');
+    this.load.image('background', 'assets/bg.png');
     //this.load.image('menu', 'src/assets/menu-0.png');
-    this.load.atlas('menu', 'src/assets/menu-0.png', 'src/assets/menu.json');
+    this.load.atlas('menu', 'assets/menu-0.png', 'assets/menu.json');
 
   }
 
