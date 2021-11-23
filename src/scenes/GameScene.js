@@ -26,21 +26,38 @@ class GameScene extends Phaser.Scene {
 
     this.eggsOptions = this.add.text(100, 200, 'EGGS \n CHERRY\n BLUE VELVETS\n CLEARS\n', {
       fontFamily: "debussy",
-    });
+    }).setInteractive();;
 
     this.menuContainer.add(this.menu);
     this.menuContainer.add(this.shrimpBucksText);
     this.menuContainer.add(this.eggsOptions);
 
     this.menuContainer.visible = this.showingMenu;
-    this.cursor = this.add.sprite(150,150,'shrimp');
-    this.input.on('pointermove', (pointer) => {
-      this.cursor.setPosition(pointer.x, pointer.y);
-    });
+    // this.cursor = this.physics.add.sprite(150,150,'shrimp');
+    // this.input.on('pointermove', (pointer) => {
+    //   this.cursor.setPosition(pointer.x, pointer.y);
+    // });
+    this.input.setDefaultCursor('url(assets/shrimp.png), pointer');
 
     //this.cameras.main.startFollow(this.cursor);
     this.menuKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
+
+    //this.physics.add.overlap(this.cursor, this.menu, this.menuOptionHover, null, this);
+    this.eggsOptions.on('pointerover', () => {
+      console.log('over!');
+      this.eggsOptions.setTint("#ffeb00");
+    });
+
+    this.eggsOptions.on('pointerout', () => {
+      console.log('out!');
+      this.eggsOptions.setTint("#ffffff");
+    });
   }
+
+  // menuOptionHover(){
+  //   console.log('hovering on eggsOptions');
+  //   this.eggsOptions.style.color = "#ffeb00";
+  // }
 
   update(time, delta) {
     if (Phaser.Input.Keyboard.JustDown(this.menuKey)) {

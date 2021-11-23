@@ -68,6 +68,8 @@ class BootScene extends Phaser.Scene {
     //this.load.image('menu', 'src/assets/menu-0.png');
     this.load.atlas('menu', 'assets/menu-0.png', 'assets/menu.json');
 
+    this.load.bitmapFont('desyrel', 'assets/desyrel.png', 'assets/desyrel.xml');
+
   }
 
 }
